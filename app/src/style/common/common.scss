@@ -1,0 +1,79 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul,
+ol,
+li {
+    list-style: none;
+}
+
+.container {
+    @include container()
+}
+
+html {
+    scroll-behavior: smooth;  
+}
+
+body {
+    background: $bg;
+    min-width: 320px; 
+    font-family: "Graphik" , sans-serif; 
+}
+
+
+.title {
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 55px;
+    letter-spacing: 0.2px; 
+    color: $dark-blue;
+}
+
+.text {
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 40px;
+    letter-spacing: 0.2px;
+    color: $dark-blue;
+}
+
+.link-A {
+    font-family: "Graphik", sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 20px;
+    letter-spacing: 0.2px;
+    border-radius: 35px;
+    text-align: center;
+    color: $white;
+    background: $light-blue; 
+    text-transform: capitalize;
+    
+}
+.link-A:hover {
+    box-shadow:inset $shadow-link; 
+ }
+.link-B {
+    font-family: "Graphik", sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 28px;
+    letter-spacing: 0.1px;
+    border-radius: 35px;
+    text-align: center;
+    color: $white;
+    background: $light-blue; 
+    text-transform: capitalize;
+}
+.link-B:hover {
+    box-shadow:inset $shadow-link; 
+}

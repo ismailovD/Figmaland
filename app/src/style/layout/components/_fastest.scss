@@ -1,0 +1,60 @@
+.fastest { 
+    padding-top: 290px;
+    padding-bottom: 290px;
+    width: 100%;
+    @include media($xl) {
+        padding-top: 150px;
+        padding-bottom: 150px;
+    }
+    @include media($xl) {
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+    &__content {
+        width: 100%;
+        @include row(0);
+        justify-content: center;
+        &-left {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding-right: 76px;
+            @include media($xl) {
+                padding-right: 0;
+                width: 100%; 
+                align-items: center;
+                margin-bottom: 65px;
+            }
+        }
+        &-title {
+            margin-bottom: 27px;
+            max-width: 335px;
+            @include media($xl) { 
+                text-align: center;
+            }
+        }
+        &-desc {
+            margin-bottom: 70px;
+            color: $text;
+            @include media($xl) { 
+                text-align: center;
+            }
+        }
+        &-link {
+            padding: 19px 59px;
+        }
+        &-right {
+            @include row(0);
+            justify-content: center;
+            max-width: 50%; 
+            @include media($xl) { 
+                max-width: 100%;
+            }
+        }
+        &-img {
+            width:  100%; 
+            object-fit: contain;
+        }
+    }
+}

@@ -1,0 +1,39 @@
+footer.footer 
+    a(href="#header").progress__load
+        i(class="fas fa-sort-up").progress__load-up
+        span.progress__load-percent
+        svg.progress__ring
+            circle(r="27" cx="30" cy="30").progress__ring-circle 
+    .container 
+        .footer__content 
+            .footer__column 
+                -var pages1 = [{name:"Home", url: "#!"},{name: "Product", url: "#!"} ,{name:"Pricing", url: "#!"} , {name:"About", url: "#!"}, {name:"Contact", url: "#!"}]
+                -var pages2 = [{name:"Eleanor Edwards", url: "#!"},{name: "Ted Robertson", url: "#!"} ,{name:"Annette Russell", url: "#!"} , {name:"Jennie Mckinney", url: "#!"}, {name:"Gloria Richards", url: "#!"}]
+                -var pages3 = [{name:"Philip Jones", url: "#!"},{name: "Product", url: "#!"} ,{name:"Colleen Russell", url: "#!"} , {name:"Marvin Hawkins", url: "#!"}, {name:"Bruce Simmmons", url: "#!"}]
+                mixin pages(title, arr)
+                    .footer__block 
+                        h3.footer__block-title= title 
+                        ul.footer__block-list 
+                            each item in arr 
+                                li.footer__block-item 
+                                    a(href=item.url).footer__block-link= item.name
+                +pages("Pages", pages1)
+                +pages("Tomothy", pages2)                  
+                +pages("Jane Black", pages3)  
+            .footer__contact 
+                ul.footer__contact-list
+                    li.footer__contact-item 
+                        i(class="fal fa-map-marker-alt")
+                        p.footer__contact-address 7480 Mockingbird Hill undefined 
+                    li.footer__contact-item 
+                        i(class="fas fa-mobile-android-alt")
+                        a(href="tel:8435550130").footer__contact-tel (843) 555-0130 
+                ul.footer__contact-social
+                        - var list = [{name:"fab fa-twitter", url:"twitter.com"},{name:"fab fa-facebook-square", url:"facebook.com"},{name:"fab fa-linkedin", url:"linkedin.com"}]
+                        each icon in list 
+                            li.footer__contact-icons
+                                a(href="https:/" + icon.url) 
+                                    i(class=icon.name)
+                                    
+                
+                        

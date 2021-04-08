@@ -1,0 +1,30 @@
+header(id="header").header 
+    nav.header__nav 
+        .header__nav-row
+            .header__nav-side   
+                ul.header__nav-menu
+                    - var menu = [{name:"Home", url: "#!"},{name: "Product", url: "#!"} ,{name:"Pricing", url: "#!"} , {name:"About", url: "#!"}, {name:"Contact", url: "#!"}]
+                      each item in menu
+                            li.header__nav-item 
+                                a(href=item.url).header__nav-link= item.name
+            
+                ul.header__nav-social 
+                    - var list = [{name:"fab fa-twitter", url:"twitter.com"},{name:"fab fa-facebook-square", url:"facebook.com"},{name:"fab fa-linkedin", url:"linkedin.com"}]
+                    each icon in list 
+                        li.header__nav-icons
+                            a(href="https:/" + icon.url) 
+                                i(class=icon.name)
+            a(href="#!").header__nav-logo 
+                img(src="images/logo.webp", alt="logotype")
+            .burger__menu
+                - for (var x = 0; x < 3; x++)
+                     span.burger__menu-line
+    div.container
+        .header__content
+            h1.header__content-title The best products start with Figma
+            p.header__content-desc Most calendars are designed for teams. Slate is designed for freelancers    
+            a(href="#!").header__content-link.link-A Try For Free                        
+        
+          
+        
+    

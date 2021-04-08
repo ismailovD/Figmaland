@@ -1,0 +1,210 @@
+.header {
+    padding-top: 47px;
+    padding-bottom: 243px;
+    width: 100%;
+    background: url('../images/header.webp') no-repeat bottom/cover;
+    @include media($xl) {
+        padding-top: 31px;
+    }
+    @include media($sm) {
+        padding-top: 0;
+        padding-bottom: 150px;
+    }
+    &__nav { 
+        padding-top: 20px;
+        padding-bottom: 20px;  
+        transition: 0.5s;
+        width: 100%;
+        @include media($sm) {
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+        &.fixed {
+            width: 100%;
+            position: fixed;
+            top: 0; 
+            left: 0;       
+            right: 0;  
+            background: $dark-blue;
+            z-index: 999;
+            border-bottom: 3px solid $border;
+            box-shadow: 0 5px 5px $border;
+        }
+        &-row {
+            position: relative;  
+            @include container(); 
+            @include row(0);
+        align-items: center;
+        justify-content: space-between;  
+        } 
+        &-side {
+            display: flex;
+            align-items: center;    
+            justify-content: space-between;
+            width: 100%; 
+            @include media($xl) {
+                transition: 0.5s;
+                padding: 50px 25px ;
+                max-width: 250px;
+                align-items: flex-start; 
+                background: $dark-blue;
+                border-left:3px solid $border;
+                box-shadow: -5px 0 10px $border;
+                flex-direction: column;
+                position: fixed;
+                height: 100vh;
+                top: 0;
+                right: -100%;
+                z-index: 1;
+                &.active {
+                    right: 0;
+                }
+            }
+        }
+        &-link {
+            font-weight: 400;
+            font-size: 15px; 
+            letter-spacing: 0.2px;
+            color: $white;
+            &:hover {
+                color: $light-blue;
+            }
+            
+            
+        }
+        
+        &-item:not(:last-child) {
+            margin-right: 41px;
+            @include media($xl) {
+                &:not(:last-child) {
+                    margin-bottom: 30px;    
+                }
+            }
+        }
+        &-menu {
+            @include row(0);
+            @include media($xl) {
+                flex-direction: column;
+            } 
+        }
+        &-logo {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            @include media($xl) { 
+                position: static;  
+                order: 0;
+                transform: translate(0, 0);
+            }
+        }
+        &-social {
+            @include row(0);  
+        }
+        &-icons:not(:last-child) {
+            margin-right: 33px;
+        }
+        &-icons i {
+            color: $white;
+            font-size: 30px;
+            transition: 0.2s;
+            
+        }
+        &-icons  i:hover { 
+            transform: scale(1.3);
+        }
+       
+    }
+    
+    &__content {
+        padding-top: 139px;
+        margin-left:  auto;
+        margin-right: auto;
+        max-width: 760px;
+        width: 100%;
+        text-align: center;
+        @include media($md) {
+            padding-top: 100px;
+        }
+        @include media($sm) {
+            padding-top: 50px;
+        }
+        &-title { 
+            font-size: 74px;
+            line-height: 84px;
+            letter-spacing: 0.2px;
+            color: $white;
+            text-align: center;
+            margin-bottom: 27px;
+            @include media($md) {
+                font-size: 57px;
+                line-height: 75px;
+            }
+            @include media($sm) {
+                font-weight: 400;
+                font-size: 48px;
+                line-height: 55px;
+            }
+            @include media(400px) { 
+                font-size: 42px; 
+            }
+             
+        }
+        &-desc {
+            font-weight: 400;
+            font-size: 28px;
+            line-height: 40px;
+            letter-spacing: 0.2px;
+            text-align: center;
+            color: $white;
+            margin-bottom: 90px;
+            @include media($md) {
+              font-size: 26px;
+            }
+            @include media($sm) {
+              font-size: 26px;
+              margin-bottom: 45px;
+            }
+            @include media(400px) {
+              font-size: 21px;
+              line-height: 25px;
+            }
+        }
+        &-link {
+            padding: 16px 62px; 
+        }
+    }
+}
+
+.burger__menu {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: none; 
+    flex-direction: column;
+    align-items: flex-end;
+    width: 27px;   
+    @include media($xl) {
+        display: flex;
+    }
+    &-line {
+        background: $white;
+        height: 3px;
+        display: block;
+        &:not(:last-child) {
+            margin-bottom: 4px;
+        }
+        &:nth-child(1) {
+            width:  100%;
+        }
+        &:nth-child(2) {
+            width: 66%;
+            text-align: right;
+        }
+        &:nth-child(3) {
+            width: 33%;
+        }
+    }
+    
+}

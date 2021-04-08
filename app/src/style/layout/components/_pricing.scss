@@ -1,0 +1,175 @@
+.pricing {
+    padding-top: 110px;
+    padding-bottom: 143px;
+    width: 100%;
+    background: $dark-blue;
+
+    @include media($sm) {
+        padding-top: 121px;
+        padding-bottom: 118px;
+    }
+    
+    &__content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    &__title {
+        color: $white;
+        margin-bottom: 27px;
+        text-align: center;
+    }
+
+    &__desc {
+        color: $white;
+        margin-bottom: 133px;
+        text-align: center;
+        max-width: 540px;
+        width: 100%;
+
+        @include media($sm) {
+            margin-bottom: 108px;
+        }
+    }
+    
+    &__row {
+        @include row(0);
+        justify-content: center; 
+        width: 100%;
+    }
+    
+    &__card {
+        max-width: 335px;
+        width: 100%;
+        background: $white;
+        padding-top: 43px;
+        padding-bottom: 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-left: 25px;
+        margin-right: 25px;
+        border-radius: 10px;
+        box-shadow: $shadow;
+        border: 1px solid $border-card; 
+        height: 100%;  
+        transition: 0.4s;
+        @include media($xxl) {
+           &:not(:last-child) {
+            margin-bottom: 50px;
+        } 
+        }
+        
+
+        &:hover {
+            background: $light-blue; 
+            padding-top: 86px;
+            padding-bottom: 83px; 
+            margin-top: -43px;
+            margin-bottom: -43px;
+            @include media($xxl) {
+                padding-top: 43px;
+                padding-bottom: 40px; 
+                margin-top: 0;
+                margin-bottom: 50px;
+            }
+            .pricing__card {
+                &-title,
+                &-desc,
+                &-item  {
+                color: $white;
+                }   
+                &-link {
+                    color: $light-blue;
+                    background: $white;
+                }
+            }
+            
+            .cost__info {
+                &-price,
+                &-sign,
+                &-term {
+                    color: $white;
+                }
+            }
+        }
+        &-title {
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 28px;
+            color: $dark-blue;
+            text-transform: uppercase;
+            letter-spacing: 0.1px;
+            margin-bottom: 3px;
+        }
+
+        &-desc {
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 23px;
+            letter-spacing: 0.1px;
+            color: $text;
+            max-width: 150px;
+            text-align: center;
+            margin-bottom: 18px;
+        }
+
+        &-cost {
+            display: flex;
+            align-items: center;
+            margin-bottom: 28px;
+        }
+
+        &-list {
+            margin-bottom: 40px;
+        }
+
+        &-item  {
+            font-weight: 400;
+            font-size: 15px;
+            line-height: 28px;
+            letter-spacing: 0.2px;
+            color: $dark-blue;
+
+            &:not(:last-child) {
+                margin-bottom: 20px;
+            }
+        }
+
+        &-link {
+            padding: 18px 75px;
+            @include media(400px) {
+                padding: 18px 50px;
+            }
+        }
+
+    }
+}
+
+.cost__info {
+    &-price {
+        font-weight: 700;
+        font-size: 74px;
+        line-height: 84px;
+        letter-spacing: 0.2px;
+        color: $dark-blue;
+        margin-right: 10px;
+    }
+
+    &-sign {
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 28px;
+        letter-spacing: 0.1px;
+        color: $dark-blue;
+    }
+
+    &-term {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 23px;
+        letter-spacing: 0.1px;
+        color: $text;
+    }
+}

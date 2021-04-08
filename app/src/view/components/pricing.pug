@@ -1,0 +1,23 @@
+section.pricing 
+    .container 
+        .pricing__content 
+            h2.pricing__title.title Pricing 
+            p.pricing__desc.text Most calendars are designed for teams. Slate is designed for freelancers
+            .pricing__row 
+                mixin card(rate, price)
+                    .pricing__card  
+                        h3.pricing__card-title= rate 
+                        p.pricing__card-desc Organize across all apps by hand 
+                        .pricing__card-cost.cost__info
+                            .cost__info-price= price 
+                            .cost__info-text 
+                                span.cost__info-sign $
+                                p.cost__info-term Per Month
+                        ul.pricing__card-list
+                            - for (var i = 0 ; i < 5 ; i++)
+                                p.pricing__card-item Pricing Feature
+                        a.pricing__card-link.link-A(href="#!")  Order Now
+                +card('free', 0)
+                +card('standart', 10)
+                +card('business', 99)
+                            

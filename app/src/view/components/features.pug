@@ -1,0 +1,18 @@
+section.features  
+    .container 
+        .features__content
+            h2.features__title.title Features
+            p.features__desc.text Most calendars are designed for teams. Slate is designed for freelancers
+            .features__grid 
+                - var list = [{icon : "svg-drawing", title : "OpenType features Variable fonts" , desc : "Slate helps you see how many more days you need to work to reach your financial goal."},{icon : "svg-draw", title : "Design with real data" , desc : "Slate helps you see how many more days you need to work to reach your financial goal."}, {icon : "svg-brush", title : "Fastest way to take action" , desc : "Slate helps you see how many more days you need to work to reach your financial goal."} ]
+                each card in list 
+                    .features__card
+                        i(class=card.icon)
+                        h3.features__card-title= card.title 
+                        p.features__card-desc= card.desc 
+            .features__player               
+                video(src="video/part2.webm" poster="images/video.webp").features__video 
+                include player-panel.pug
+                .features__player-btn
+                    span.features__player-play    
+                        

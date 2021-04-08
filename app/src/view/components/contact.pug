@@ -1,0 +1,33 @@
+section.contact 
+    .container 
+        .contact__content
+            h2.contact__title.title Contact Us
+            p.contact__desc.text Most calendars are designed for teams. Slate is designed for freelancers
+            .contact__part 
+                form.contact__form(action="" method="post")
+                    h3.contact__form-title  Contact Us
+                    input(type="text" placeholder='You Name').contact__form-name
+                    input(type="email" placeholder="You Email").contact__form-email
+                    textarea(name="textarea", cols="30", rows="10" placeholder="Your Message").contact__form-textarea
+                    button(type="submit" disabled).contact__form-btn.link-A Send   
+                .contact__info 
+                    ul.contact__info-list
+                        li.contact__info-item 
+                            i(class="fal fa-map-marker-alt")
+                            p.contact__info-address 6386 Spring St undefined Anchorage, Georgia 12473 United States 
+                        li.contact__info-item
+                            i(class="fas fa-mobile-android-alt")
+                            a(href="tel:8435550130").contact__info-tel (843) 555-0130
+                        li.contact__info-item
+                            i(class="fal fa-envelope")
+                            a(href="mailto:willie.jennings@example.com").contact__info-email willie.jennings@example.com
+                    .contact__info-map 
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.4591024318265!2d-122.42143038434787!3d37.77927921967273!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808580997aeae663%3A0xb2706dff83574f4a!2z0KHQuNGC0Lgt0YXQvtC70Lsg0KHQsNC9LdCk0YDQsNC90YbQuNGB0LrQvg!5e0!3m2!1sru!2s!4v1617694486512!5m2!1sru!2s" width="516" height="323" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    ul.contact__info-social
+                        - var list = [{name:"fab fa-twitter", url:"twitter.com"},{name:"fab fa-facebook-square", url:"facebook.com"},{name:"fab fa-linkedin", url:"linkedin.com"}]
+                        each icon in list 
+                            li.contact__info-icons
+                                a(href="https:/" + icon.url) 
+                                    i(class=icon.name)
+                
+            

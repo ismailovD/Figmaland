@@ -1,0 +1,137 @@
+.subscribe { 
+    padding-top: 159px;
+    padding-bottom: 52px;
+    width: 100%;
+    @include media($xl) {
+        padding-top: 81px;
+        padding-bottom: 114px;
+    }
+    &__content {
+        display: grid;
+        grid-template-columns: 1.5fr  1fr;
+        grid-template-rows:  1fr 1.2fr;
+        grid-column-gap: 35px;
+        @include media($xl) {
+            grid-template-columns:  1fr;
+            grid-template-rows:  1fr 2fr 1fr; 
+        }
+    }
+    &__draw { 
+        grid-column: 1/ span 1 ;
+        grid-row: 1/span 2;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 40px;
+        @include media($xl) { 
+            grid-row: 2/span 1;
+        }
+        &-img {
+            width: 100%; 
+            margin: 0 auto;
+            object-fit: contain;
+            @include media($xl) { 
+                width: 80%;
+             }
+            @include media($md) { 
+                width: 100%;
+             }
+        }
+       
+    }
+    &__text { 
+        grid-column: 2/ span 1 ;
+        grid-row: 1/span 1; 
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;   
+        @include media($xl) { 
+            align-items: center;
+            grid-column: 1/ span 1 ;
+            grid-row: 1/span 1; 
+        } 
+        &-suptitle {
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 28px;
+        letter-spacing: 0.1px;
+        color: $dark-blue;
+        margin-bottom: 17px;
+        }
+        &-title { 
+            margin-bottom: 35px;
+            @include media($md) { 
+             text-align: center;
+              }
+        }
+       
+    }
+    &__send {
+        grid-column: 2/ span 1 ;
+        grid-row: 2/span 1; 
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding-left: 7px;
+        @include media($xl) { 
+           align-items: center;
+            grid-column: 1/ span 1 ;
+            grid-row: 3/span 1;
+            padding-left: 0;
+        }
+        &-title {
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 28px;
+            letter-spacing: 0.1px;
+            color: $dark-blue;  
+        }
+        &-desc {
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 25px;
+            letter-spacing: 0.2px;
+            color: $text;
+            margin-bottom: 36px; 
+            @include media($xl) { 
+               text-align: center;
+              }
+        }
+        &-input {
+            padding: 19px 39px;
+            border-radius: 39px;
+            background: $input;
+            border: 1px solid $border;
+            margin-right: 12px;
+            @include media($xxl) {
+                width: 100%;
+                margin-bottom: 12px;
+            }
+            
+            &:focus {
+                border-radius: 39px;
+                outline: none;
+                border: 1px solid $light-blue;
+            }
+            &::placeholder {
+                font-family: "Roboto";
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 16px;
+                letter-spacing: 0.1px;
+                color: $placeholder;
+            }
+            
+        }
+        &-btn {
+            padding: 18px 38px; 
+            border: none;
+            cursor: pointer;
+            @include media($xxl) {
+                width: 100%; 
+            }
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+}

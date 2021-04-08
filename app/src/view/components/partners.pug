@@ -1,0 +1,13 @@
+section.partners 
+    .container
+        .partners__content 
+            h2.partners__title.title Partners 
+            p.partners__desc.text Most calendars are designed for teams. Slate is designed for freelancers
+            .partners__row  
+                - var partner = ['google','amazon','microsoft','uber','dropbox','google','uber','amazon']
+                    each item in partner 
+                        .partners__item
+                            p.partners__item-name Client name
+                            img.partners__item-img(src="images/"+item + ".webp", alt="partner")
+            a.partners__link.link-B(href="#!")  Try For Free
+

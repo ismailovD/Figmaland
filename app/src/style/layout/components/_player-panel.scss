@@ -1,0 +1,177 @@
+.player {
+    &__panel {  
+        visibility: hidden;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        @include row(0);
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding: 20px;  
+        background: rgba(0, 0, 0, 0.5);
+        @include media($sm) {
+            padding: 5px;
+            justify-content: space-around;
+        }
+        &.active {
+            visibility: visible;
+        }
+        & i {
+            font-size: 25px;
+            color: $white;
+            
+            @include media($sm) {
+                font-size: 16px;
+            }
+        }
+    }
+    
+    &__progress {
+        margin: 10px; 
+        flex-grow: 1;
+        height: 10px; 
+        background: $white;
+        position: relative;
+        border-radius: 5px;
+        cursor: pointer;
+        
+        &-line {
+            position: absolute;
+            width:  0%;
+            height: 100%;   
+            border-radius: 5px; 
+            top: 0;
+            left: 0; 
+            background: $light-blue;
+            
+        }
+        
+        &-hover {
+            position: absolute;
+            width:  0%;
+            height: 100%;   
+            border-radius: 5px;  
+            top: 0;
+            left: 0; 
+            background: $grey;
+        }
+    }
+    &__top {
+        width: 100%;
+        @include row(0);
+        align-items: center;
+        padding: 0 20px;
+        margin-bottom: 10px;
+        @include media($sm) {
+           margin-bottom: 0;
+        }
+    }
+    &__left,
+    &__right {
+        padding: 0 20px;
+        @include row(0);  
+        align-items: center;
+        @include media($sm) {
+            padding: 0;
+        }
+    }
+     
+    &__playOrPause { 
+        position: relative;
+        margin-right: 10px; 
+        
+        &-play {
+            position: absolute;
+            top: 0;
+            left: 0; 
+            display: none;
+            
+            &.active {
+                position: static;
+                display: inline-block;
+            }
+        }
+        &-pause {
+            position: absolute; 
+            display: none;
+            top: 0;
+            left: 0;
+            &.active {
+                position: static;
+                display: inline-block;
+            }
+        }
+         
+        
+    }
+     
+    
+    &__speed-down,
+    &__speed-up,
+    &__stop  {
+        margin: 0 10px;
+        @include media($sm) {
+            display: none;
+        }
+    }
+    
+    &__volume { 
+        position: relative;
+        margin: 0 10px;  
+         
+        &-off {
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: none;
+            
+            &.active {
+                position: static;
+                display: flex;
+            }
+        }
+        &-on {
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: none;
+            
+            &.active {
+                position: static;
+                display: flex;
+            }
+        }
+        
+        &-level {
+            @include media($sm) {
+                display: none;
+            }
+        }
+        
+    }
+    
+    &__time {
+        @include row(0);    
+        font-size: 20px;
+        font-weight: 400;
+        letter-spacing: 0.1px;
+        line-height: 30px;
+        color: $white;
+        text-shadow: 0 0 1px $black;
+        @include media($sm) {
+            font-size: 14px;
+        }
+        & p {
+            display: flex;
+            width: 100px;
+            justify-content: center;
+            @include media($sm) {
+               width: fit-content;
+            }
+        }
+        
+    }
+    
+    
+}

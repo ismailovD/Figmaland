@@ -1,0 +1,30 @@
+.player__panel 
+    .player__top
+        .player__time 
+            p.player__time-now   00:00:00 
+            span /  
+            p.player__time-full  00:00:00
+        .player__progress
+            .player__progress-hover
+            .player__progress-line
+    .player__left 
+        .player__playOrPause 
+            .player__playOrPause-play 
+                i(class="fas fa-play")     
+            .player__playOrPause-pause.active  
+                i(class="fas fa-pause") 
+        .player__stop
+            i(class="fas fa-stop")
+        .player__speed-down 
+            i(class="fas fa-backward")
+        .player__speed-up 
+            i(class="fas fa-forward") 
+        .player__volume 
+            .player__volume-on.active 
+                i(class="fas fa-volume-up")  
+            .player__volume-off
+                i(class="fas fa-volume-mute")
+        input(type="range" max="100" min="0" value="50").player__volume-level 
+    .player__right
+        a(href="" download).player__download 
+            i(class="fas fa-download") 
