@@ -12,8 +12,10 @@ loadProgress.addEventListener('click', ()=> {
     
 })
 
-document.addEventListener('scroll' , ()=> {  
-    let percent = Math.round(pageYOffset * 100 / (document.documentElement.scrollHeight - circle.parentElement.clientHeight - nav.clientHeight - 580 ));
+document.addEventListener('scroll' , ()=> {   
+    let windowScroll = pageYOffset,
+        windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight,
+        percent = Math.round(windowScroll / windowHeight * 100);
     if(pageYOffset == 0 ){
         loadProgress.style.display = "none" 
     } else  loadProgress.style.display = "flex" 
