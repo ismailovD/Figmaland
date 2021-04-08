@@ -150,6 +150,33 @@
         }
         
     }
+    &__zoom { 
+        position: relative;
+        margin: 0 10px;  
+         
+        &-in {
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: none;
+            
+            &.active {
+                position: static;
+                display: flex;
+            }
+        }
+        &-out {
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: none;
+            
+            &.active {
+                position: static;
+                display: flex;
+            }
+        } 
+    }
     
     &__time {
         @include row(0);    
